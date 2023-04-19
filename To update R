@@ -1,5 +1,10 @@
-# Code to update R to its latest version
+# Code to update R to its latest version:
 
 install.packages("installr", dependencies = TRUE)
 library(installr)
 updateR()
+
+
+# Likewise, to update the packages...
+
+update.packages()
