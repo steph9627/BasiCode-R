@@ -1,0 +1,5 @@
+# Code to erase 
+
+df$variable_name <- iconv(df$variable_name, from = "UTF-8", to = "ASCII//TRANSLIT")
+
+write.csv(df, 'path/to/folder/file_name.csv', row.names = FALSE)
