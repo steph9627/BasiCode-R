@@ -1,0 +1,16 @@
+library(sf)
+
+# Setting directory path to where the gpkg files are located...
+dir_path <- "C:/path/to/the/folder"
+
+# Getting list of gpkg files in the directory...
+gpkg_files <- list.files(dir_path, pattern = "\\.gpkg$", full.names = TRUE)
+
+# Looping through each gpkg file and convert to shapefile...
+for (i in seq_along(gpkg_files)) {
+  gpkg_file <- gpkg_files[i]
+  shp_file <- gsub("\\.gpkg$", ".shp", gpkg_file)
+  
+  gpkg_sf <- st_read(gpkg_file)
+  st_write(gpkg_sf, shp_file)
+}
