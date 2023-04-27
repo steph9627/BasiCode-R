@@ -1,4 +1,4 @@
-# Code to erase 
+# Code to erase accents from a csv
 
 df$variable_name <- iconv(df$variable_name, from = "UTF-8", to = "ASCII//TRANSLIT")
 
