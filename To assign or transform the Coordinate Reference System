@@ -1,0 +1,26 @@
+# Setting Working Directory...
+setwd("C:/Users/steph/Desktop")
+
+
+#               Assigning a CRS 
+
+# Reading a TIF file as a raster...
+raster_file <- raster("the_file.tif")
+
+# Assigning a CRS... 
+
+#   e.g. WGS84
+crs(raster_file) <- "+init=epsg:4326"
+
+#   e.g. Sinusoidal
+crs(raster_file) <- "+proj=sinu"
+
+# ------------------------------------------------------------------------------
+
+#               Transforming the CRS 
+
+# Loading the Shapefile of Interest...
+shp_name <- st_read('filename.shp') 
+
+# Transforming the CRS...
+transformed_shp_name <- st_transform(shp_name, "+proj=longlat +datum=WGS84")
