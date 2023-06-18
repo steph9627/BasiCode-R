@@ -1,0 +1,24 @@
+
+library(dplyr)
+
+# Cleaning workspace ------------------------------------------------------
+
+g <- gc(reset = T)
+rm(list = ls())
+options(scipen = 999, warn = -1)
+
+# Setting working directory...
+setwd("C:/Users/")
+
+# Loading the data...
+df <- as_tibble(read.csv('file_name.csv'))
+
+
+# Subsetting the data frame, picking only the variables of interest...
+subset <- df[, c("variable1", "variable2")]
+
+# Keeping only the unique observations...
+unique <- subset[!duplicated(subset$variable1), ]
+
+# Saving the results...
+write.csv(unique, 'output_file_name.csv', row.names = FALSE)
