@@ -1,0 +1,2 @@
+# To fill a Dummy based on the comparisson between two variables
+df$dummy_proj <- ifelse(df$dummy_proj == 1 & df$year >= df$start_date, 1, 0)
