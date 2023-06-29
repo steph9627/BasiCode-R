@@ -1,0 +1,3 @@
+diff <- setdiff(df1$var_name, df2$var_name)
+diff
+length(diff)
